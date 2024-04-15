@@ -1,8 +1,11 @@
 package com.changeset.cleanup.Controllers;
 
 
+import com.changeset.cleanup.DAO.ChangesetDAO;
 import com.changeset.cleanup.Model.Changeset;
 import com.changeset.cleanup.Service.ChangesetService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +14,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("changeset")
+@AllArgsConstructor
+@NoArgsConstructor
 public class changesetController {
 
 
@@ -33,11 +38,12 @@ public class changesetController {
     }
 
 
-    @GetMapping("/cleanup/date/{from}/to/{to}")
-    public List<Changeset> getChangesetsByDate(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to ){
-        System.out.println("From date  is "+  from +" to date is "+to );
+    @GetMapping("/cleanup/date/from/to/to")
+    public List<Changeset> getChangesetsByDate(){
+//        @PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to
+//        System.out.println("From date  is "+  from +" to date is "+to );
         System.out.println("I'm in Controller..");
-        return changesetService.getChangsetsByDate(from,to);
+        return changesetService.getChangsetsByDate();
     }
 
 
