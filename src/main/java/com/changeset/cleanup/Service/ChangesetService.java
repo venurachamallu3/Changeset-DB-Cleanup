@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import com.changeset.cleanup.DAO.ChangesetDAO;
 
 import java.awt.print.Pageable;
+import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -34,13 +36,40 @@ public class ChangesetService {
         return cs.get();
     }
 
-    private int i = 14214553;
     public List<Changeset> getChangsetsByDate() {
 //        System.out.println("from "+from +"to "+to);
         Timestamp fromDate = Timestamp.valueOf("2024-02-22 04:34:53.144");
-        Timestamp to = Timestamp.valueOf("2024-02-22 06:34:53.144");
+        Timestamp to = Timestamp.valueOf("2024-02-25 04:34:53.144");
 
+        LocalDateTime from = fromDate.toLocalDateTime();
+        LocalDateTime nextDay = from.plusDays(1);
+        Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+
+
+        getChangesetsDayByDay(fromDate,nextDayTimestamp, to);
+        System.out.println("Done with all date ...");
         return changesetDAO.getChangsetsByDate(fromDate,to);
+
+    }
+
+    void getChangesetsDayByDay(Timestamp fromDate,Timestamp nextDate,Timestamp endDate){
+
+
+        if(nextDate.getTime() <= endDate.getTime()){
+            System.out.println("calling tha DAO with the from date is "+fromDate +" nextdate is "+nextDate);
+
+            //call to th3e DAO
+           Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangsetsByDate(fromDate, nextDate));
+
+            LocalDateTime start = nextDate.toLocalDateTime();
+            LocalDateTime nextDay = start.plusDays(1);
+            Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+            Timestamp startday = Timestamp.valueOf(start);
+
+            getChangesetsDayByDay(startday,nextDayTimestamp,endDate);
+
+        }
+
 
     }
 }
