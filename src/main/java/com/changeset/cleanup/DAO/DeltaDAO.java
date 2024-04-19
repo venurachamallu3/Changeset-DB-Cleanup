@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface DeltaDAO extends JpaRepository <Delta,Long> {
 
-    @Query("select d from Delta d where d.changeset_id = (select c.id from Changeset c where c.id= :cid) ")
+    @Query("select d from Delta d where d.changeset_id = :cid")
 //    changeset_id = :cid
     public List< Delta> findByChangesetId(Long cid);
 
@@ -27,7 +27,7 @@ public interface DeltaDAO extends JpaRepository <Delta,Long> {
 
     @Transactional
     @Modifying
-    @Query("delete  from Delta d where d.changeset_id = (select c.id from Changeset c where c.id= :cid) ")
+    @Query("delete  from Delta d where d.changeset_id = :cid ")
     public void deleteByChangesetId(@Param("cid") Long cid);
 
 
@@ -37,4 +37,15 @@ public interface DeltaDAO extends JpaRepository <Delta,Long> {
     @Query("delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ")
     public void deleteByDeltaByDate(@Param("from") Timestamp from, @Param("to") Timestamp to);
 
+
+
+    @Query("select d from Delta d where d.changeset_id IN (SELECT c.id FROM Changeset c WHERE c.org_id = :orgId and c.changeset_recorded_time > :from and c.changeset_recorded_time < :to)")
+    List<Delta> getDeltaByPartyID(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
+
+
+
+    @Transactional
+    @Modifying
+    @Query("delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.org_id = :orgId and  c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ")
+    public  void deleteDeltaByParty(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
 }

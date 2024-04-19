@@ -63,8 +63,6 @@ public class DeltaService {
             Timestamp startday = Timestamp.valueOf(start);
 
             getChangesetsDayByDay(startday, nextDayTimestamp, endDate);
-
-
         }
 
     }
@@ -109,4 +107,73 @@ public class DeltaService {
 
 
     }
+
+    public List<Delta> getDeltaByParty(Timestamp fromDate, Timestamp to, Long orgId) {
+
+        LocalDateTime from = fromDate.toLocalDateTime();
+        LocalDateTime nextDay = from.plusDays(1);
+        Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+
+        getDeletaByPartyID(fromDate,nextDayTimestamp, to,orgId);
+        System.out.println("Done with all date ...");
+       return deltaDAO.getDeltaByPartyID(fromDate,to,orgId);
+
+    }
+
+
+    private void getDeletaByPartyID(Timestamp fromDate, Timestamp nextDate, Timestamp endDate, Long orgId) {
+
+        if (nextDate.getTime() <= endDate.getTime()) {
+            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate);
+
+            Optional<List<Delta>> d = Optional.ofNullable(deltaDAO.getDeltaByPartyID(fromDate, nextDate,orgId));
+            System.out.println("API CALL IS DONE .... ");
+            if (d.isPresent()) {
+                List<Delta> deltaList = d.get();
+                int totalObjects = deltaList.size();
+                System.out.println("Total number of objects in d: " + totalObjects);
+            } else {
+                System.out.println("No objects found in d.");
+            }
+
+            LocalDateTime start = nextDate.toLocalDateTime();
+            LocalDateTime nextDay = start.plusDays(1);
+            Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+            Timestamp startday = Timestamp.valueOf(start);
+
+            getDeletaByPartyID(startday, nextDayTimestamp, endDate , orgId);
+        }
+
+    }
+
+
+    public String deleteDeltaByParty(Timestamp fromDate, Timestamp to, Long orgId) {
+
+        LocalDateTime from = fromDate.toLocalDateTime();
+        LocalDateTime nextDay = from.plusDays(1);
+        Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+
+        deleteDeltaByPartyIDDataByDate(fromDate,nextDayTimestamp, to,orgId);
+        System.out.println("Done with all date ...");
+
+        return "Successfully Deleted with the party ID "+orgId;
+    }
+
+    public void deleteDeltaByPartyIDDataByDate(Timestamp fromDate, Timestamp nextDate, Timestamp endDate, Long orgId){
+
+        if (nextDate.getTime() <= endDate.getTime()) {
+            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate);
+
+            deltaDAO.deleteDeltaByParty(fromDate, nextDate,orgId);
+            System.out.println("API CALL IS DONE .... ");
+
+            LocalDateTime start = nextDate.toLocalDateTime();
+            LocalDateTime nextDay = start.plusDays(1);
+            Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+            Timestamp startday = Timestamp.valueOf(start);
+
+            deleteDeltaByPartyIDDataByDate(startday, nextDayTimestamp, endDate , orgId);
+        }
+    }
+
 }
