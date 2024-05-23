@@ -6,6 +6,8 @@ import com.changeset.cleanup.Model.Changeset;
 import com.changeset.cleanup.Service.ChangesetService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ import java.util.List;
 @NoArgsConstructor
 public class changesetController {
 
+    private static  final Logger logger = (Logger) LoggerFactory.getLogger(changesetController.class);
+
 
 
     @Autowired
@@ -33,6 +37,7 @@ public class changesetController {
 
     @GetMapping("/cleanup/{id}")
     public Changeset getChangesetByID(@PathVariable("id") Long Id){
+        logger.info("fetching the changeset data for the ID "+Id);
 
         System.out.println("ID is "+ Id );
         System.out.println("fetching the data ...I'm in Controller..");

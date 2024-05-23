@@ -1,8 +1,12 @@
 package com.changeset.cleanup.Service;
 
+import com.changeset.cleanup.Controllers.changesetController;
+import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.changeset.cleanup.DAO.ChangesetDAO;
@@ -15,22 +19,29 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChangesetService {
 
+    private static  final Logger logger = (Logger) LoggerFactory.getLogger(ChangesetService.class);
+
+
     @Autowired
     public  ChangesetDAO changesetDAO;
 
     public Changeset getChangesetByID(Long id){
+        logger.info("Getting the data from the DB for the ID "+id);
         System.out.println("ID is "+ id );
         System.out.println("fetching the data from the DB ...I'm in Service..");
-        Optional<Changeset> cs = changesetDAO.findById(id);
-        if(!cs.isPresent()){
-            System.out.println("ID IS NOT FOUND...");
-        }
+        Optional<Changeset> cs = Optional.ofNullable(changesetDAO.findById(id).orElseThrow(() -> new IDNotFoundException("DATA IS NOT FOUND WITH THE ID  " + id)));
+//        if(!cs.isPresent()){
+//            System.out.println("ID IS NOT FOUND...");
+//            throw new IDNotFoundException("DATA IS NOT FOUND WITH THE ID  "+ id);
+//        }
         System.out.println("after getting the db the data is "+cs.get().getId());
         return cs.get();
     }
@@ -42,14 +53,17 @@ public class ChangesetService {
 //        Timestamp fromDate = Timestamp.valueOf("2024-02-22 04:34:53.144");
 //        Timestamp to = Timestamp.valueOf("2024-02-25 04:34:53.144");
 
+
         LocalDateTime from = fromDate.toLocalDateTime();
         LocalDateTime nextDay = from.plusDays(1);
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
+
+
 //        if(fromDate)
 
+//        if(nextDayTimestamp)
 
         return getChangesetsDayByDay(fromDate,nextDayTimestamp, to,allChangesetIds);
-//        System.out.println("Done with all date ...");
 //
 //
 //        return changesetDAO.getChangsetsByDate(fromDate,to);
@@ -150,6 +164,7 @@ public class ChangesetService {
 
     public void deleteChangesetByID(Long id) {
         System.out.println("Deleting the changeset ID By ID "+id);
+        Optional<Changeset> cs = Optional.ofNullable(changesetDAO.findById(id).orElseThrow(() -> new IDNotFoundException("DATA IS NOT FOUND WITH THE ID  " + id)));
         changesetDAO.deleteById(id);
     }
 
