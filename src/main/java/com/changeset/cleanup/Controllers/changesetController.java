@@ -2,6 +2,7 @@ package com.changeset.cleanup.Controllers;
 
 
 import com.changeset.cleanup.DAO.ChangesetDAO;
+import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
 import com.changeset.cleanup.Service.ChangesetService;
 import lombok.AllArgsConstructor;
@@ -38,9 +39,6 @@ public class changesetController {
     @GetMapping("/cleanup/{id}")
     public Changeset getChangesetByID(@PathVariable("id") Long Id){
         logger.info("fetching the changeset data for the ID "+Id);
-
-        System.out.println("ID is "+ Id );
-        System.out.println("fetching the data ...I'm in Controller..");
         return changesetService.getChangesetByID(Id);
     }
 
@@ -49,7 +47,8 @@ public class changesetController {
     public List<Long> getChangesetsByDate(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
 //        @PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to
 //        System.out.println("From date  is "+  from +" to date is "+to );
-        System.out.println("I'm in Controller..");
+        logger.info("Changeset Clean up data from {} to{} ",from, to);
+//        System.out.println("I'm in Controller..");
         return changesetService.getChangsetsByDate(from,to);
     }
 
@@ -57,23 +56,25 @@ public class changesetController {
     @GetMapping("/cleanup/party/from/{from}/to/{to}")
     public List<Long> getChangesetPartyAndDate(@PathVariable("from") Timestamp from ,
                                                @PathVariable("to") Timestamp to,
-                                               @RequestParam(value = "orgId", required = false) Long orgId){
-
-
-
-        return changesetService.getchangesetDataByPartyDate(from,to,orgId);
+                                               @RequestParam(value = "orgId", required = true) Long orgId){
+        logger.info("Changeset Data for party id {} from {} to {}  ",orgId,from,to);
+         return changesetService.getchangesetDataByPartyDate(from,to,orgId);
     }
 
 
     @DeleteMapping("/cleanup/{id}")
     public String deleteChangesetByID(@PathVariable("id") Long Id){
+//        if(Id==null) throw new IDNotFoundException("Changeset ID is Missing in the URL, please provide the Changeset ID ");
+        logger.info("Calling the Service to delete the changeset Data  with ID is "+Id);
         changesetService.deleteChangesetByID(Id);
+        logger.info("CHANGESET DATA DELETED SUCCESSFULLY with ID is {}",Id);
         return "DELETED SUCCESSFULLY.......";
     }
 
     @DeleteMapping("/cleanup/date/from/{from}/to/{to}")
     public String deleteChangesetByDate(@PathVariable("from") Timestamp from, @PathVariable("to") Timestamp to){
 
+        logger.info("Deleting the changeset Data from {} to {} ", from,to);
         System.out.println("deleting the Changeset Data from "+ from + " to "+ to);
         changesetService.deleteChangesetByDate(from,to);
         return "deleted changeset Data from "+ from + "to "+to ;

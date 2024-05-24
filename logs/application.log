@@ -1,0 +1,280 @@
+2024-05-24 11:23:03 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 11980 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 11:23:03 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 11:23:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 11:23:05 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2024-05-24 11:23:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:23:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 11:23:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 11:23:08 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 11:23:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 11:23:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6371cf2f
+2024-05-24 11:23:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 11:23:11 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 11:23:13 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:23:14 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 11:23:15 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:23:15 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.129 seconds (process running for 12.672)
+2024-05-24 11:23:26 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 11:23:26 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 11:23:26 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 11:23:26 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 142145
+2024-05-24 11:23:26 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 142145
+2024-05-24 11:33:48 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:33:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 11:33:48 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 11:34:00 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 10588 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 11:34:00 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 11:34:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 11:34:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
+2024-05-24 11:34:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:34:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 11:34:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 11:34:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 11:34:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 11:34:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a8f6e6
+2024-05-24 11:34:07 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 11:34:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 11:34:09 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:34:10 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 11:34:11 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:34:11 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.062 seconds (process running for 15.738)
+2024-05-24 11:34:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 11:34:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 11:34:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-24 11:34:35 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 14214553
+2024-05-24 11:34:35 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 14214553
+2024-05-24 11:35:50 [http-nio-8080-exec-5] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 3759703
+2024-05-24 11:35:50 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 3759703
+2024-05-24 11:35:51 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Got the Changeset Data with Id is 3759703Changeset(id=3759703, org_id=61251, changeset_type=LICENSE_EXPIRED, changeset_recorded_time=2023-07-30 00:05:50.768943, changeset_source=License Listener Service)
+2024-05-24 11:40:40 [http-nio-8080-exec-8] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 14214559
+2024-05-24 11:40:40 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 14214559
+2024-05-24 11:40:40 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Got the Changeset Data with Id is 14214559Changeset(id=14214559, org_id=2248143, changeset_type=NEW_MARC_RECORD, changeset_recorded_time=2024-02-18 09:38:06.130432, changeset_source=License Listener Service)
+2024-05-24 11:40:47 [http-nio-8080-exec-9] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 142145
+2024-05-24 11:40:47 [http-nio-8080-exec-9] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 142145
+2024-05-24 11:41:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:41:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 11:41:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 11:41:15 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 5540 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 11:41:15 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 11:41:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 11:41:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2024-05-24 11:41:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:41:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 11:41:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 11:41:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 11:41:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 11:41:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38588dea
+2024-05-24 11:41:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 11:41:23 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 11:41:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:41:25 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 11:41:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:41:27 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.454 seconds (process running for 13.021)
+2024-05-24 11:44:10 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 11:44:10 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 11:44:10 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 11:44:10 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 142145
+2024-05-24 11:44:10 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 142145
+2024-05-24 11:44:11 [http-nio-8080-exec-2] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  142145
+2024-05-24 11:50:45 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:50:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 11:50:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 11:50:54 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 15436 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 11:50:54 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 11:50:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 11:50:55 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 155 ms. Found 2 JPA repository interfaces.
+2024-05-24 11:51:00 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:51:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 11:51:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 11:51:01 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 11:51:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 11:51:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c9ef6e9
+2024-05-24 11:51:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 11:51:04 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 11:51:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:51:07 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 11:51:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:51:09 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 16.296 seconds (process running for 17.11)
+2024-05-24 11:51:34 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 11:51:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 11:51:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-24 11:51:35 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Changeset Clean up data from %s to %s
+2024-05-24 11:51:35 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetsDayByDay to get the changeset Data
+2024-05-24 11:51:35 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is %s to %s
+2024-05-24 11:51:40 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is %s to %s
+2024-05-24 11:51:41 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is %s to %s
+2024-05-24 11:51:42 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from %s to %s 
+2024-05-24 11:51:42 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from %s to %s 
+2024-05-24 11:51:42 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from %s to %s 
+2024-05-24 11:59:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:59:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 11:59:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 11:59:16 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 2336 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 11:59:16 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 11:59:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 11:59:18 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 2 JPA repository interfaces.
+2024-05-24 11:59:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:59:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 11:59:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 11:59:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 11:59:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 11:59:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b7c58e7
+2024-05-24 11:59:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 11:59:24 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 11:59:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 11:59:26 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 11:59:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 11:59:27 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 11.889 seconds (process running for 15.5)
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Changeset Clean up data from 2023-07-27 00:00:00.0 to2023-07-31 00:00:00.0 
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetsDayByDay to get the changeset Data from 2023-07-27 00:00:00.0 to 2023-07-31 00:00:00.0
+2024-05-24 11:59:43 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-27 00:00:00.0 to 2023-07-28 00:00:00.0
+2024-05-24 11:59:45 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-28 00:00:00.0 to 2023-07-29 00:00:00.0
+2024-05-24 11:59:46 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-29 00:00:00.0 to 2023-07-30 00:00:00.0
+2024-05-24 11:59:47 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-30 00:00:00.0 to 2023-07-31 00:00:00.0
+2024-05-24 11:59:48 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2023-07-30 00:00:00.0 to 2023-07-31 00:00:00.0 
+2024-05-24 11:59:48 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2023-07-29 00:00:00.0 to 2023-07-31 00:00:00.0 
+2024-05-24 11:59:48 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2023-07-28 00:00:00.0 to 2023-07-31 00:00:00.0 
+2024-05-24 11:59:48 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2023-07-27 00:00:00.0 to 2023-07-31 00:00:00.0 
+2024-05-24 12:01:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:01:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 12:01:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 12:02:02 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 15780 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 12:02:02 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 12:02:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 12:02:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 2 JPA repository interfaces.
+2024-05-24 12:02:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:02:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 12:02:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 12:02:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 12:02:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 12:02:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@668cc9a2
+2024-05-24 12:02:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 12:02:10 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 12:02:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:02:12 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 12:02:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:02:13 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.331 seconds (process running for 12.92)
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Changeset Clean up data from 2023-07-27 00:00:00.0 to2023-07-31 00:00:00.0 
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetsDayByDay to get the changeset Data from 2023-07-27 00:00:00.0 to 2023-07-31 00:00:00.0
+2024-05-24 12:04:14 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-27 00:00:00.0 to 2023-07-28 00:00:00.0
+2024-05-24 12:04:15 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-28 00:00:00.0 to 2023-07-29 00:00:00.0
+2024-05-24 12:04:16 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-29 00:00:00.0 to 2023-07-30 00:00:00.0
+2024-05-24 12:04:17 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2023-07-30 00:00:00.0 to 2023-07-31 00:00:00.0
+2024-05-24 12:04:18 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2023-07-31 00:00:00.0 to 2023-07-31 00:00:00.0  is %s
+2024-05-24 12:45:04 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:45:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 12:45:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 12:45:14 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 16240 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 12:45:14 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 12:45:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 12:45:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 2 JPA repository interfaces.
+2024-05-24 12:45:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:45:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 12:45:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 12:45:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 12:45:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 12:45:21 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b7c58e7
+2024-05-24 12:45:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 12:45:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 12:45:24 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:45:25 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 12:45:26 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:45:26 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.27 seconds (process running for 15.601)
+2024-05-24 12:45:42 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 12:45:42 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 12:45:42 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 12:46:07 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'orgId' for method parameter type Long is not present]
+2024-05-24 12:58:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:58:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 12:58:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 12:58:16 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 6844 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 12:58:16 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 12:58:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 12:58:17 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2024-05-24 12:58:21 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:58:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 12:58:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 12:58:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 12:58:21 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 12:58:24 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5729b410
+2024-05-24 12:58:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 12:58:25 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 12:58:27 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 12:58:27 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 12:58:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 12:58:28 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.945 seconds (process running for 16.528)
+2024-05-24 12:58:37 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 12:58:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 12:58:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 12:58:38 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Changeset Data for party id 100 from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0  
+2024-05-24 12:58:38 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetDataAPIDateParty to get the Changest Data for Party ID 100 from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0 
+2024-05-24 12:58:38 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-12 00:00:00.0 to 2023-07-13 00:00:00.0 with party ID 100
+2024-05-24 12:58:38 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0 is 2 
+2024-05-24 12:58:38 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-13 00:00:00.0 to 2023-07-14 00:00:00.0 with party ID 100
+2024-05-24 12:58:39 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-13 00:00:00.0 to 2023-07-15 00:00:00.0 is 11 
+2024-05-24 12:58:39 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-14 00:00:00.0 to 2023-07-15 00:00:00.0 with party ID 100
+2024-05-24 12:58:39 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-14 00:00:00.0 to 2023-07-15 00:00:00.0 is 41 
+2024-05-24 12:58:39 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Total Changeset Data for Party 100 from 2023-07-15 00:00:00.0 to 2023-07-15 00:00:00.0 is 54 
+2024-05-24 13:01:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 13:01:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 13:01:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 13:02:01 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 13188 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 13:02:01 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 13:02:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 13:02:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2024-05-24 13:02:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 13:02:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 13:02:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 13:02:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 13:02:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 13:02:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b5b9333
+2024-05-24 13:02:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 13:02:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 13:02:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 13:02:11 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 13:02:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 13:02:13 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.118 seconds (process running for 12.665)
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Changeset Data for party id 100 from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0  
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetDataAPIDateParty to get the Changest Data for Party ID 100 from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0 
+2024-05-24 13:02:20 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-12 00:00:00.0 to 2023-07-13 00:00:00.0 with party ID 100
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-12 00:00:00.0 to 2023-07-15 00:00:00.0 is 2 
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-13 00:00:00.0 to 2023-07-14 00:00:00.0 with party ID 100
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-13 00:00:00.0 to 2023-07-15 00:00:00.0 is 11 
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2023-07-14 00:00:00.0 to 2023-07-15 00:00:00.0 with party ID 100
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2023-07-14 00:00:00.0 to 2023-07-15 00:00:00.0 is 41 
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Total Changeset Data for Party 100 from 2023-07-15 00:00:00.0 to 2023-07-15 00:00:00.0 count  is 54 
+2024-05-24 13:02:21 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Data is [3735821, 3735822, 3735881, 3735933, 3735947, 3735896, 3735908, 3735921, 3735952, 3735882, 3735935, 3735949, 3735954, 3736020, 3736023, 3736026, 3736036, 3736055, 3736059, 3736069, 3736073, 3736081, 3736082, 3736083, 3736087, 3736089, 3736093, 3736101, 3736102, 3736104, 3736105, 3736021, 3736024, 3736027, 3736043, 3736057, 3736067, 3736072, 3736074, 3736091, 3736095, 3736022, 3736025, 3736028, 3736038, 3736044, 3736056, 3736058, 3736068, 3736090, 3736092, 3736094, 3736096, 3736103]
+2024-05-24 13:14:47 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 13:14:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 13:14:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-24 13:14:57 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 6012 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-24 13:14:57 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-24 13:14:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24 13:14:59 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2024-05-24 13:15:02 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-24 13:15:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-24 13:15:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-24 13:15:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-24 13:15:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-24 13:15:05 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@35eee641
+2024-05-24 13:15:05 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-24 13:15:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24 13:15:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 13:15:07 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-24 13:15:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-24 13:15:09 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 11.9 seconds (process running for 15.381)
+2024-05-24 13:15:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-24 13:15:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-24 13:15:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-24 13:15:36 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24 13:15:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-24 13:15:36 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
