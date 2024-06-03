@@ -1,9 +1,7 @@
 package com.changeset.cleanup.Service;
 
-import com.changeset.cleanup.Controllers.changesetController;
 import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
-import com.changeset.cleanup.Model.Delta;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
@@ -15,13 +13,10 @@ import com.changeset.cleanup.DAO.ChangesetDAO;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Service
 @AllArgsConstructor
@@ -44,6 +39,7 @@ public class ChangesetService {
     public List<Long> getChangsetsByDate(Timestamp fromDate , Timestamp to) {
 
         List<Long> allChangesetIds = new ArrayList<>();
+        List<Changeset> csa = new ArrayList<>();
 ////        System.out.println("from "+from +"to "+to);
 //        Timestamp fromDate = Timestamp.valueOf("2024-02-22 04:34:53.144");
 //        Timestamp to = Timestamp.valueOf("2024-02-25 04:34:53.144");
@@ -53,13 +49,47 @@ public class ChangesetService {
         LocalDateTime nextDay = from.plusDays(1);
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
 
-        logger.info("Calling the method getChangesetsDayByDay to get the changeset Data from {} to {}", fromDate,to);
-        return getChangesetsDayByDay(fromDate,nextDayTimestamp, to,allChangesetIds);
+        if(nextDayTimestamp.getTime()>=to.getTime()){
+            Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangsetsByDate(fromDate, to));
+
+            if(cs.isPresent()){
+                  List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
+                          .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                          .map(Changeset::getId) // Extract the changesetID from each Changeset object
+                          .collect(Collectors.toList());
+
+                  logger.info("Changeset Data count  from {} to {} is {}",fromDate,to,changesetIDs.size());
+                  allChangesetIds.addAll(changesetIDs);
+
+              }
+            return allChangesetIds;
+        }else {
+
+            logger.info("Calling the method getChangesetsDayByDay to get the changeset Data from {} to {}", fromDate, to);
+            return getChangesetsDayByDay(fromDate, nextDayTimestamp, to, allChangesetIds);
+        }
     }
 
     public List<Long> getChangesetsDayByDay(Timestamp fromDate,Timestamp nextDate,Timestamp endDate, List<Long> allChangesetIDs){
 
         if (nextDate.getTime() > endDate.getTime()) {
+
+            Timestamp beforeDate = Timestamp.valueOf(nextDate.toLocalDateTime().minusDays(1));
+
+            logger.info("Calling the last api call from {} to {} ",beforeDate,endDate);
+            System.out.println("Before date is "+beforeDate +" end date is "+endDate);
+            Optional <List<Changeset>> csf = Optional.ofNullable(changesetDAO.getChangsetsByDate(beforeDate, endDate));
+
+            if (csf.isPresent()) {
+                List<Long> changesetIDs = csf.map(List::stream)  // Convert the list to a stream
+                        .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                        .map(Changeset::getId) // Extract the changesetID from each Changeset object
+                        .collect(Collectors.toList());
+
+                logger.info("Changeset Data count  from {} to {} is {}",beforeDate,endDate,changesetIDs.size());
+                allChangesetIDs.addAll(changesetIDs);
+            }
+
             logger.info("Got all the changeset Data from {} to {}  is {}", fromDate,endDate,allChangesetIDs);
             return allChangesetIDs;
         }
