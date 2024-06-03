@@ -4,6 +4,7 @@ package com.changeset.cleanup.Controllers;
 import com.changeset.cleanup.DAO.ChangesetDAO;
 import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
+import com.changeset.cleanup.Model.Delta;
 import com.changeset.cleanup.Service.ChangesetService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -63,20 +64,20 @@ public class changesetController {
 
 
     @DeleteMapping("/cleanup/{id}")
-    public String deleteChangesetByID(@PathVariable("id") Long Id){
+    public Changeset deleteChangesetByID(@PathVariable("id") Long Id){
 //        if(Id==null) throw new IDNotFoundException("Changeset ID is Missing in the URL, please provide the Changeset ID ");
         logger.info("Calling the Service to delete the changeset Data  with ID is "+Id);
-        changesetService.deleteChangesetByID(Id);
-        logger.info("CHANGESET DATA DELETED SUCCESSFULLY with ID is {}",Id);
-        return "DELETED SUCCESSFULLY.......";
+        return changesetService.deleteChangesetByID(Id);
+//        logger.info("CHANGESET DATA DELETED SUCCESSFULLY with ID is {}",Id);
+//        return "DELETED SUCCESSFULLY.......";
     }
 
     @DeleteMapping("/cleanup/date/from/{from}/to/{to}")
     public String deleteChangesetByDate(@PathVariable("from") Timestamp from, @PathVariable("to") Timestamp to){
 
         logger.info("Deleting the changeset Data from {} to {} ", from,to);
-        System.out.println("deleting the Changeset Data from "+ from + " to "+ to);
         changesetService.deleteChangesetByDate(from,to);
+        logger.info("Successfully deleted the Changeset Data from {} to {} ",from,to);
         return "deleted changeset Data from "+ from + "to "+to ;
     }
 
@@ -85,12 +86,18 @@ public class changesetController {
     @DeleteMapping("/cleanup/party/from/{from}/to/{to}")
     public ResponseEntity<String> deleteChangesetByDateAndPartyID(@PathVariable("from") Timestamp from ,
                                                           @PathVariable("to") Timestamp to,
-                                                          @RequestParam(value = "orgId", required = false) Long orgId){
+                                                          @RequestParam(value = "orgId", required = true) Long orgId){
 
         if(orgId!=null){
-            System.out.println("DELETING the Changeset By Party id "+ orgId);
+//            System.out.println("DELETING the Changeset By Party id "+ orgId);
 
+
+            logger.info("Deleting the Changeset Data for Party ID {} from {} to {}",orgId,from
+                    ,to);
             String delData = changesetService.deleteChangesetByDateAndParty(from,to,orgId);
+
+            logger.info("Deleted the Changeset Data for Party ID {} from {} to {}",orgId,from
+                    ,to);
             return  ResponseEntity.status(HttpStatus.OK).body(delData);
         }
         else{

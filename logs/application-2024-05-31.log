@@ -1,0 +1,35 @@
+2024-05-31 14:39:29 [http-nio-8080-exec-6] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 17867584215
+2024-05-31 14:39:30 [http-nio-8080-exec-6] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  17867584215
+2024-05-31 14:39:37 [http-nio-8080-exec-7] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 1786758
+2024-05-31 14:39:38 [http-nio-8080-exec-7] INFO  c.c.cleanup.Service.ChangesetService - DELTED SUCCESSFULLY...
+2024-05-31 14:39:38 [http-nio-8080-exec-7] INFO  c.c.c.C.changesetController - CHANGESET DATA DELETED SUCCESSFULLY with ID is 1786758
+2024-05-31 14:43:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-31 14:43:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-05-31 14:43:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-05-31 14:44:18 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 16032 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-05-31 14:44:18 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 14:44:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 14:44:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2024-05-31 14:44:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-31 14:44:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-31 14:44:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-31 14:44:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-31 14:44:24 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-05-31 14:44:26 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b5b9333
+2024-05-31 14:44:26 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-05-31 14:44:27 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-31 14:44:29 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-31 14:44:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-31 14:44:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-31 14:44:31 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 13.331 seconds (process running for 14.802)
+2024-05-31 14:44:45 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-31 14:44:45 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-31 14:44:45 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-05-31 14:44:45 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 1786758
+2024-05-31 14:44:46 [http-nio-8080-exec-2] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  1786758
+2024-05-31 14:44:51 [http-nio-8080-exec-3] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 1786757
+2024-05-31 14:44:52 [http-nio-8080-exec-3] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  1786757
+2024-05-31 14:45:12 [http-nio-8080-exec-4] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 1786748
+2024-05-31 14:45:13 [http-nio-8080-exec-4] INFO  c.c.cleanup.Service.ChangesetService - DELTED SUCCESSFULLY...
+2024-05-31 14:45:30 [http-nio-8080-exec-5] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 1786748
+2024-05-31 14:45:30 [http-nio-8080-exec-5] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  1786748

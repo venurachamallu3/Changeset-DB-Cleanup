@@ -3,6 +3,7 @@ package com.changeset.cleanup.Service;
 import com.changeset.cleanup.Controllers.changesetController;
 import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
+import com.changeset.cleanup.Model.Delta;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
@@ -115,7 +116,6 @@ public class ChangesetService {
             return allChangesetIDs;
         }
         if(nextDate.getTime() <= endDate.getTime()) {
-            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate + "partyID  " +orgId);
 
             logger.info("calling tha DAO with the from  {} to {} with party ID {}",fromDate,nextDate,orgId);
             //call to th3e DAO
@@ -150,11 +150,12 @@ public class ChangesetService {
 
 
 
-    public void deleteChangesetByID(Long id) {
+    public Changeset deleteChangesetByID(Long id) {
 //        System.out.println("Deleting the changeset ID By ID "+id);
         Optional<Changeset> cs = Optional.ofNullable(changesetDAO.findById(id).orElseThrow(() -> new IDNotFoundException("DATA IS NOT FOUND WITH THE ID  " + id)));
         changesetDAO.deleteById(id);
         logger.info("DELTED SUCCESSFULLY...");
+        return cs.get();
     }
 
     public void deleteChangesetByDate(Timestamp fromDate, Timestamp to) {
@@ -164,19 +165,21 @@ public class ChangesetService {
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
 
 
+        logger.debug("Calling the method deleteChangesetDataWithDate with Dates from {} to {}",fromDate,to);
         deleteChangesetDataWithDate(fromDate,nextDayTimestamp, to);
-        System.out.println("Done with all date ...");
-
+        logger.info("ALL DATA DELETED SUCCESSFULLYY from {} to {] ........", fromDate,to);
 //        return "DELETED SUCCESSFULLYY........";
     }
 
     public void deleteChangesetDataWithDate(Timestamp fromDate,Timestamp nextDate,Timestamp endDate){
 
         if (nextDate.getTime() <= endDate.getTime()) {
+            logger.info("Calling the DAO to Delete with the from date is \" + fromDate + \" nextdate is \" + nextDate ");
 
-            System.out.println("calling tha DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate);
+
+//            System.out.println("calling tha DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate);
             changesetDAO.deleteChangesetDataWithDate(fromDate,nextDate);
-            System.out.println("API CALL IS DONE and deleted the data.... ");
+//            System.out.println("API CALL IS DONE and deleted the data.... ");
 
             LocalDateTime start = nextDate.toLocalDateTime();
             LocalDateTime nextDay = start.plusDays(1);
@@ -195,8 +198,11 @@ public class ChangesetService {
         LocalDateTime nextDay = from.plusDays(1);
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
 
+
+        logger.info("Calling the Method deleteChangesetByPartyIDAndByDate , to delete the Changeset Data for Party ID {} from {} to ", orgId, fromDate,to);
         deleteChangesetByPartyIDAndByDate(fromDate,nextDayTimestamp, to,orgId);
-        System.out.println("Done with all date ...");
+
+        logger.info("Successfully Deleted with the party ID {}",orgId);
 
         return "Successfully Deleted with the party ID "+orgId;
     }
@@ -205,10 +211,11 @@ public class ChangesetService {
 
 
         if (nextDate.getTime() <= endDate.getTime()) {
-            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate);
+//            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate);
 
+            logger.info("Calling the DAO for party ID {} from {} to {} ",orgId,fromDate,nextDate);
             changesetDAO.deleteChangesetByPartyAndDate(fromDate, nextDate,orgId);
-            System.out.println("API CALL IS DONE .... ");
+//            System.out.println("API CALL IS DONE .... ");
 
             LocalDateTime start = nextDate.toLocalDateTime();
             LocalDateTime nextDay = start.plusDays(1);

@@ -28,14 +28,14 @@ public interface DeltaDAO extends JpaRepository <Delta,Long> {
     @Transactional
     @Modifying
     @Query("delete  from Delta d where d.changeset_id = :cid ")
-    public void deleteByChangesetId(@Param("cid") Long cid);
+    public Delta deleteByChangesetId(@Param("cid") Long cid);
 
 
 
     @Transactional
     @Modifying
     @Query("delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ")
-    public void deleteByDeltaByDate(@Param("from") Timestamp from, @Param("to") Timestamp to);
+    public List<Delta> deleteByDeltaByDate(@Param("from") Timestamp from, @Param("to") Timestamp to);
 
 
 
@@ -47,5 +47,5 @@ public interface DeltaDAO extends JpaRepository <Delta,Long> {
     @Transactional
     @Modifying
     @Query("delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.org_id = :orgId and  c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ")
-    public  void deleteDeltaByParty(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
+    public  List<Delta> deleteDeltaByParty(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
 }
