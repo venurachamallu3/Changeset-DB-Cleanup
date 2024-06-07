@@ -26,8 +26,6 @@ public class changesetController {
 
     private static  final Logger logger = (Logger) LoggerFactory.getLogger(changesetController.class);
 
-
-
     @Autowired
     public ChangesetService changesetService;
 
@@ -38,9 +36,9 @@ public class changesetController {
     }
 
     @GetMapping("/cleanup/{id}")
-    public Changeset getChangesetByID(@PathVariable("id") Long Id){
+    public ResponseEntity<Changeset> getChangesetByID(@PathVariable("id") Long Id){
         logger.info("fetching the changeset data for the ID "+Id);
-        return changesetService.getChangesetByID(Id);
+        return new ResponseEntity<>(changesetService.getChangesetByID(Id), HttpStatus.OK);
     }
 
 
@@ -64,44 +62,37 @@ public class changesetController {
 
 
     @DeleteMapping("/cleanup/{id}")
-    public Changeset deleteChangesetByID(@PathVariable("id") Long Id){
+    public ResponseEntity<Changeset> deleteChangesetByID(@PathVariable("id") Long Id){
 //        if(Id==null) throw new IDNotFoundException("Changeset ID is Missing in the URL, please provide the Changeset ID ");
         logger.info("Calling the Service to delete the changeset Data  with ID is "+Id);
-        return changesetService.deleteChangesetByID(Id);
+        return new ResponseEntity<>(changesetService.deleteChangesetByID(Id), HttpStatus.OK);
 //        logger.info("CHANGESET DATA DELETED SUCCESSFULLY with ID is {}",Id);
 //        return "DELETED SUCCESSFULLY.......";
     }
 
     @DeleteMapping("/cleanup/date/from/{from}/to/{to}")
-    public String deleteChangesetByDate(@PathVariable("from") Timestamp from, @PathVariable("to") Timestamp to){
-
+    public ResponseEntity <List<Long>>
+    deleteChangesetByDate(@PathVariable("from") Timestamp from, @PathVariable("to") Timestamp to){
         logger.info("Deleting the changeset Data from {} to {} ", from,to);
-        changesetService.deleteChangesetByDate(from,to);
-        logger.info("Successfully deleted the Changeset Data from {} to {} ",from,to);
-        return "deleted changeset Data from "+ from + "to "+to ;
+        return new ResponseEntity<>(changesetService.deleteChangesetByDate(from,to),HttpStatus.OK);
     }
 
 
 
     @DeleteMapping("/cleanup/party/from/{from}/to/{to}")
-    public ResponseEntity<String> deleteChangesetByDateAndPartyID(@PathVariable("from") Timestamp from ,
+    public ResponseEntity<List<Long>> deleteChangesetByDateAndPartyID(@PathVariable("from") Timestamp from ,
                                                           @PathVariable("to") Timestamp to,
                                                           @RequestParam(value = "orgId", required = true) Long orgId){
 
         if(orgId!=null){
-//            System.out.println("DELETING the Changeset By Party id "+ orgId);
-
-
             logger.info("Deleting the Changeset Data for Party ID {} from {} to {}",orgId,from
                     ,to);
-            String delData = changesetService.deleteChangesetByDateAndParty(from,to,orgId);
+            List<Long> ChangesetIDS= changesetService.deleteChangesetByDateAndParty(from,to,orgId);
 
-            logger.info("Deleted the Changeset Data for Party ID {} from {} to {}",orgId,from
-                    ,to);
-            return  ResponseEntity.status(HttpStatus.OK).body(delData);
+            return  ResponseEntity.status(HttpStatus.OK).body(ChangesetIDS);
         }
         else{
-            System.out.println("party id is missing....");
+            logger.error("party id is missing....");
             return  ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 

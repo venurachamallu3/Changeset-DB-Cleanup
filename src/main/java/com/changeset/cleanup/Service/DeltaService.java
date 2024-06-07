@@ -2,6 +2,7 @@ package com.changeset.cleanup.Service;
 
 
 import com.changeset.cleanup.Controllers.changesetController;
+import com.changeset.cleanup.DAO.ChangesetDAO;
 import com.changeset.cleanup.DAO.DeltaDAO;
 import com.changeset.cleanup.Exception.IDNotFoundException;
 import com.changeset.cleanup.Model.Changeset;
@@ -28,11 +29,12 @@ public class DeltaService {
     @Autowired
     private DeltaDAO deltaDAO;
 
-    public List<Delta> getDeltaByDate(Timestamp fromDate,Timestamp to) {
-//        Timestamp fromDate = Timestamp.valueOf("2023-02-22 04:34:53.144");
-//        Timestamp to = Timestamp.valueOf("2023-02-25 04:34:53.144");
+    @Autowired
+    private ChangesetDAO changesetDAO;
 
-        List<Delta> deltadata= new ArrayList<>();
+    public List<Long> getDeltaByDate(Timestamp fromDate,Timestamp to) {
+
+        List<Long> deltadata= new ArrayList<>();
 
         LocalDateTime from = fromDate.toLocalDateTime();
         LocalDateTime nextDay = from.plusDays(1);
@@ -41,8 +43,6 @@ public class DeltaService {
 
         logger.info("Calling the method getChangesetsDayByDay to get the data from {} to {}  ",from,to);
         return  getChangesetsDayByDay(fromDate,nextDayTimestamp, to,deltadata);
-//        System.out.println("Done with all date ...");
-//        return deltaDAO.getDeltaDayByDay(fromDate,to);
     }
 
     public List<Delta> getDeltaByChangesetID(Long cID){
@@ -59,7 +59,7 @@ public class DeltaService {
     }
 
 
-    public  List<Delta> getChangesetsDayByDay(Timestamp fromDate, Timestamp nextDate, Timestamp endDate, List<Delta> alldeltadata) {
+    public  List<Long> getChangesetsDayByDay(Timestamp fromDate, Timestamp nextDate, Timestamp endDate, List<Long> alldeltadata) {
 
 
         if(nextDate.getTime()>=endDate.getTime()){
@@ -72,10 +72,14 @@ public class DeltaService {
             Optional<List<Delta>> d = Optional.ofNullable(deltaDAO.getDeltaDayByDay(fromDate, nextDate));
             logger.info("API CALL IS DONE.......");
             if (d.isPresent()) {
-                List<Delta> deltaList = d.get();
-                alldeltadata.addAll(deltaList);
-                int totalObjects = deltaList.size();
-                logger.info("Total delta data from {} to {} count is {} and the data is {}" , fromDate,nextDate,totalObjects,deltaList);
+                List<Long> changesetIDs = d.map(List::stream)  // Convert the list to a stream
+                        .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                        .map(Delta::getChangeset_id) // Extract the changesetID from each Changeset object
+                        .collect(Collectors.toList());
+
+
+                alldeltadata.addAll(changesetIDs);
+                logger.info("Total delta data from {} to {} count is {} and the changeset ID is {}" , fromDate,nextDate,changesetIDs.size(),changesetIDs);
             } else {
                 logger.info("No data is found from {} to {}", fromDate, nextDate);
             }
@@ -92,11 +96,17 @@ public class DeltaService {
     }
 
 
-    public Delta  deleteByChangesetID(Long id) {
+    public List<Delta>  deleteByChangesetID(Long id) {
 
-       Delta delta = deltaDAO.deleteByChangesetId(id);
-       logger.info("Deleted sucessfully for the changeset ID is {} and delta data  is ",id,delta);
-       return delta;
+         Changeset c  = changesetDAO.findById(id).orElseThrow(()-> new IDNotFoundException("Changeset ID is not found in the Changeset DB with ID "+id));
+
+         List<Delta> d = deltaDAO.findByChangesetId(id);
+         if(d.isEmpty()) {
+             throw new IDNotFoundException("Changeset ID is not found in the Delta Data , with ID as  "+id);
+        }
+       deltaDAO.deleteByChangesetId(id);
+       logger.info("Deleted sucessfully Delta data for the changeset ID is {} and delta data  is ",id,d);
+       return d;
     }
 
     public List<Delta> deleteDayByDayData(Timestamp fromDate, Timestamp to) {
@@ -124,9 +134,14 @@ public class DeltaService {
         }
         if (nextDate.getTime() <= endDate.getTime()) {
 
-            System.out.println("calling tha DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate);
             logger.info("calling tha DAO to Delete with the from {} to {} ",fromDate,nextDate);
-            List<Delta> d = deltaDAO.deleteByDeltaByDate(fromDate,nextDate);
+
+
+            List<Delta> d = deltaDAO.getDeltaDayByDay(fromDate,nextDate);
+
+
+
+             deltaDAO.deleteByDeltaByDate(fromDate,nextDate);
             logger.info("API CALL IS DONE and deleted the data.... ");
 
             if(d!=null){
@@ -193,7 +208,7 @@ public class DeltaService {
         LocalDateTime from = fromDate.toLocalDateTime();
         LocalDateTime nextDay = from.plusDays(1);
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
-logger.info("Calling the method deleteDeltaByPartyIDDataByDate from {} to {} ",fromDate,to);
+         logger.info("Calling the method deleteDeltaByPartyIDDataByDate from {} to {} ",fromDate,to);
         deleteDeltaByPartyIDDataByDate(fromDate,nextDayTimestamp, to,orgId,allDeletedDelta);
 
 

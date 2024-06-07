@@ -40,7 +40,7 @@ public class DeltaController {
     }
 
     @GetMapping("/cleanup/date/from/{from}/to/{to}")
-    public List<Delta> getDeltaByDate(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
+    public List<Long> getDeltaByDate(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
 //        System.out.println("From date  is "+  from +" to date is "+to );
         logger.info("Getting the Delta Data from {} to {} is ",from,to);
         return deltaService.getDeltaByDate(from,to);
@@ -67,10 +67,11 @@ public class DeltaController {
 
 
     @DeleteMapping("/cleanup/{id}")
-    public Delta deleteByChangesetID(@PathVariable("id") Long id){
+    public List<Delta> deleteByChangesetID(@PathVariable("id") Long id){
 //        System.out.println("deleting the data by changeset ID "+id);
         logger.info("Deleting the Delta Data with the Changeset ID as {}",id);
-        return deltaService.deleteByChangesetID(id);
+        return  deltaService.deleteByChangesetID(id);
+
     }
 
 
