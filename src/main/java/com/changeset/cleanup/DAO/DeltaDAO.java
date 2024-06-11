@@ -47,5 +47,5 @@ public interface DeltaDAO extends JpaRepository <Delta,Long> {
     @Transactional
     @Modifying
     @Query("delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.org_id = :orgId and  c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ")
-    public  List<Delta> deleteDeltaByParty(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
+    public  void deleteDeltaByParty(@Param("from") Timestamp from, @Param("to") Timestamp to,@Param("orgId") Long orgId);
 }

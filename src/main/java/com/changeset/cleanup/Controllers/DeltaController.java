@@ -34,27 +34,25 @@ public class DeltaController {
 
     @GetMapping("/cleanup/{id}")
     public List<Delta> getDeltaByChangesetID( @PathVariable("id") Long changest_id){
-
         logger.info("Getting the Delta Data for the Changeset ID is {}",changest_id);
         return (List<Delta>) deltaService.getDeltaByChangesetID(changest_id);
     }
 
     @GetMapping("/cleanup/date/from/{from}/to/{to}")
     public List<Long> getDeltaByDate(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
-//        System.out.println("From date  is "+  from +" to date is "+to );
-        logger.info("Getting the Delta Data from {} to {} is ",from,to);
-        return deltaService.getDeltaByDate(from,to);
+      logger.info("Getting the Delta Data from {} to {} is ",from,to);
+      return deltaService.getDeltaByDate(from,to);
     }
 
     @GetMapping("/cleanup/party/from/{from}/to/{to}")
-    public ResponseEntity<List<Delta>> getDeltaUsingPartyID(@PathVariable("from") Timestamp from ,
+    public ResponseEntity<List<Long>> getDeltaUsingPartyID(@PathVariable("from") Timestamp from ,
                                                            @PathVariable("to") Timestamp to,
                                                            @RequestParam(value = "orgId", required = false) Long orgId){
 
         if(orgId!=null){
         System.out.println("Getting the Delta By Party id "+ orgId);
 
-        List<Delta> delData = deltaService.getDeltaByParty(from,to,orgId);
+        List<Long> delData = deltaService.getDeltaByParty(from,to,orgId);
         logger.info("Got the Delta Data for the party ID {} from {} to {} is {}  ",orgId,from,to, delData);
         return  ResponseEntity.status(HttpStatus.OK).body(delData);
         }
@@ -76,15 +74,14 @@ public class DeltaController {
 
 
     @DeleteMapping("/cleanup/date/from/{from}/to/{to}")
-    public List<Delta> deleteDataDayByDay(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
-        System.out.println("From date  is "+  from +" to date is "+to );
-        logger.info("Delete the Delta Data from {} to {} ",from,to);
+    public List<Long> deleteDataDayByDay(@PathVariable("from") Timestamp from , @PathVariable("to") Timestamp to){
+       logger.info("Delete the Delta Data from {} to {} ",from,to);
         return deltaService.deleteDayByDayData(from,to);
     }
 
 
     @DeleteMapping("/cleanup/party/from/{from}/to/{to}")
-    public ResponseEntity<String> deleteDeltaUsingPartyID(@PathVariable("from") Timestamp from ,
+    public ResponseEntity<List<Long>> deleteDeltaUsingPartyID(@PathVariable("from") Timestamp from ,
                                                             @PathVariable("to") Timestamp to,
                                                             @RequestParam(value = "orgId", required = false) Long orgId){
 
@@ -92,7 +89,7 @@ public class DeltaController {
             System.out.println("DELETING the Delta By Party id "+ orgId);
             logger.info("Deleting the Delta Data for the party ID {} from {} to {} ",orgId,from,to);
 
-          String delData = deltaService.deleteDeltaByParty(from,to,orgId);
+          List<Long> delData = deltaService.deleteDeltaByParty(from,to,orgId);
             return  ResponseEntity.status(HttpStatus.OK).body(delData);
         }
         else{

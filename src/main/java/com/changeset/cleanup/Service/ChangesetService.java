@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.changeset.cleanup.DAO.ChangesetDAO;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -47,7 +48,6 @@ public class ChangesetService {
 
         if(nextDayTimestamp.getTime()>=to.getTime()){
             Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangsetsByDate(fromDate, to));
-
             if(cs.isPresent()){
                   List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
                           .orElseGet(Stream::empty) // Return an empty stream if the list is null
@@ -56,15 +56,12 @@ public class ChangesetService {
 
                   logger.info("Changeset Data count  from {} to {} is {}",fromDate,to,changesetIDs.size());
                   allChangesetIds.addAll(changesetIDs);
-
-
               }
             return allChangesetIds;
-
         }else {
-
             logger.info("Calling the method getChangesetsDayByDay to get the changeset Data from {} to {}", fromDate, to);
-            return getChangesetsDayByDay(fromDate, nextDayTimestamp, to, allChangesetIds);
+            List<Long> finalchangesetIDs =  getChangesetsDayByDay(fromDate, nextDayTimestamp, to, allChangesetIds);
+            return finalchangesetIDs;
         }
     }
 
@@ -83,8 +80,6 @@ public class ChangesetService {
                 logger.info("Changeset Data count  from {} to {} is {}",beforeDate,endDate,changesetIDs.size());
                 allChangesetIDs.addAll(changesetIDs);
             }
-
-            logger.info("Got all the changeset Data from {} to {}  is {}", fromDate,endDate,allChangesetIDs);
             return allChangesetIDs;
         }
         if(nextDate.getTime() <= endDate.getTime()) {
@@ -110,24 +105,19 @@ public class ChangesetService {
 
             getChangesetsDayByDay(startday, nextDayTimestamp, endDate,allChangesetIDs);
         }
-
         return allChangesetIDs;
     }
 
 
 
     public List<Long> getchangesetDataByPartyDate(Timestamp fromDate, Timestamp to, Long orgId){
-
         List<Long> allChangesetIDs = new ArrayList<>();
         LocalDateTime from = fromDate.toLocalDateTime();
         LocalDateTime nextDay = from.plusDays(1);
         Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
-
         logger.info("Calling the method getChangesetDataAPIDateParty to get the Changest Data for Party ID {} from {} to {} ",orgId, fromDate,to);
-         return  getChangesetDataAPIDateParty(fromDate,nextDayTimestamp, to,orgId,allChangesetIDs);
-//
-//        System.out.println("Done with all date ...");
-
+         List<Long> finalChangesetIDS = getChangesetDataAPIDateParty(fromDate,nextDayTimestamp, to,orgId,allChangesetIDs);
+         return finalChangesetIDS;
     }
 
 
@@ -135,26 +125,34 @@ public class ChangesetService {
 
 
         if (nextDate.getTime() > endDate.getTime()) {
+            Timestamp beforeDate = Timestamp.valueOf(nextDate.toLocalDateTime().minusDays(1));
+            logger.info("Calling the last api call from {} to {} ",beforeDate,endDate);
+            Optional <List<Changeset>> csf = Optional.ofNullable(changesetDAO.getChangesetByPartyIDAndDate(beforeDate, endDate,orgId));
+            if (csf.isPresent()) {
+                List<Long> changesetIDs = csf.map(List::stream)  // Convert the list to a stream
+                        .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                        .map(Changeset::getId) // Extract the changesetID from each Changeset object
+                        .collect(Collectors.toList());
+
+                logger.info("Changeset Data count  from {} to {} is {}",beforeDate,endDate,changesetIDs.size());
+                allChangesetIDs.addAll(changesetIDs);
+            }
             logger.info("Total Changeset Data for Party {} from {} to {} count  is {} ",orgId,fromDate,endDate,allChangesetIDs.size());
-            logger.info("Data is {}",allChangesetIDs);
             return allChangesetIDs;
         }
-        if(nextDate.getTime() <= endDate.getTime()) {
+        else if(nextDate.getTime() <= endDate.getTime()) {
 
             logger.info("calling tha DAO with the from  {} to {} with party ID {}",fromDate,nextDate,orgId);
             //call to th3e DAO
             Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangesetByPartyIDAndDate(fromDate, nextDate,orgId));
 
             if (cs.isPresent()) {
-
-//                System.out.println("Total count in the current API call " + cs.get().size());
                 List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
                         .orElseGet(Stream::empty) // Return an empty stream if the list is null
                         .map(Changeset::getId) // Extract the changesetID from each Changeset object
                         .collect(Collectors.toList());
 
                 logger.info("Changeset Data from {} to {} is {} ", fromDate, endDate,changesetIDs.size());
-
                 allChangesetIDs.addAll(changesetIDs);
             }
 
@@ -165,17 +163,12 @@ public class ChangesetService {
 
             getChangesetDataAPIDateParty(startday, nextDayTimestamp, endDate,orgId,allChangesetIDs);
         }
-
-//        System.out.println("Total size is "+allChangesetIDs.size() +"\n"+" IDs are"+allChangesetIDs);
         return allChangesetIDs;
-
-
     }
 
 
 
     public Changeset deleteChangesetByID(Long id) {
-//        System.out.println("Deleting the changeset ID By ID "+id);
         Optional<Changeset> cs = Optional.ofNullable(changesetDAO.findById(id).orElseThrow(() -> new IDNotFoundException("DATA IS NOT FOUND WITH THE ID  " + id)));
         changesetDAO.deleteById(id);
         logger.info("Changeset Data is deleted successfully with ID as  {} and data is {} ",id, cs.get());
@@ -197,8 +190,24 @@ public class ChangesetService {
 
     public List<Long> deleteChangesetDataWithDate(Timestamp fromDate,Timestamp nextDate,Timestamp endDate, List<Long> allChangesetIds){
 
+        if(nextDate.getTime()>endDate.getTime()){
+            Timestamp beforeDate = Timestamp.valueOf(nextDate.toLocalDateTime().minusDays(1));
+            logger.info("Calling the last api call to get the delta data from {} to {} ",beforeDate,endDate);
+            Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangsetsByDate(beforeDate, endDate));
+            if (cs.isPresent()) {
+                List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
+                        .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                        .map(Changeset::getId) // Extract the changesetID from each Changeset object
+                        .collect(Collectors.toList());
 
-        if (nextDate.getTime() <= endDate.getTime()) {
+                logger.info("Last API call Changeset Data count  from {} to {} is {}",beforeDate,endDate,changesetIDs.size());
+                allChangesetIds.addAll(changesetIDs);
+            }
+            changesetDAO.deleteChangesetDataWithDate(beforeDate,endDate);
+            logger.info("Deleted the changeset data from {} to {} ", beforeDate,endDate);
+            return allChangesetIds;
+        }
+        else if (nextDate.getTime() <= endDate.getTime()) {
             logger.info("Calling the DAO to Delete with the from {} to {} ", fromDate, nextDate);
             Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangsetsByDate(fromDate, nextDate));
             if (cs.isPresent()) {
@@ -235,25 +244,32 @@ public class ChangesetService {
 
         logger.info("Calling the Method deleteChangesetByPartyIDAndByDate , to delete the Changeset Data for Party ID {} from {} to ", orgId, fromDate,to);
 
-
-
-
         List<Long> finalIds = deleteChangesetByPartyIDAndByDate(fromDate,nextDayTimestamp, to,orgId,allChangesetIDs);
-
         logger.info("Successfully Deleted  the changeset Data for  the party ID {} from {} to {} , changeset IDS : {}",orgId,from,to,finalIds);
-
         return finalIds;
     }
 
     private List<Long> deleteChangesetByPartyIDAndByDate(Timestamp fromDate, Timestamp nextDate, Timestamp endDate, Long orgId , List<Long> allChangesetIDs) {
+        if(nextDate.getTime()>endDate.getTime()){
+            Timestamp beforeDate = Timestamp.valueOf(nextDate.toLocalDateTime().minusDays(1));
+            logger.info("Calling the last api call to get the delta data from {} to {} for party id {} ",beforeDate,endDate, orgId);
+            Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangesetByPartyIDAndDate(beforeDate, endDate,orgId));
+            if (cs.isPresent()) {
+                List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
+                        .orElseGet(Stream::empty) // Return an empty stream if the list is null
+                        .map(Changeset::getId) // Extract the changesetID from each Changeset object
+                        .collect(Collectors.toList());
 
-
-        if (nextDate.getTime() <= endDate.getTime()) {
-//            System.out.println("calling tha DAO with the from date is " + fromDate + " nextdate is " + nextDate);
-
-            logger.info("Calling the DAO for party ID {} from {} to {} ",orgId,fromDate,nextDate);
-
-            Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangesetByPartyIDAndDate(fromDate, nextDate,orgId));
+                logger.info("Last API call for party id {} to get the  Changeset Data count  from {} to {} is {}",orgId,beforeDate,endDate,changesetIDs.size());
+                allChangesetIDs.addAll(changesetIDs);
+            }
+            changesetDAO.deleteChangesetByPartyAndDate(beforeDate,endDate,orgId);
+            logger.info("Deleted the changeset data for party id {} from {} to {} ", orgId, beforeDate,endDate);
+            return allChangesetIDs;
+        }
+        else if (nextDate.getTime() <= endDate.getTime()) {
+          logger.info("Calling the DAO to get the changeset data for party ID {} from {} to {} ",orgId,fromDate,nextDate);
+          Optional <List<Changeset>> cs = Optional.ofNullable(changesetDAO.getChangesetByPartyIDAndDate(fromDate, nextDate,orgId));
             if (cs.isPresent()) {
                 List<Long> changesetIDs = cs.map(List::stream)  // Convert the list to a stream
                         .orElseGet(Stream::empty) // Return an empty stream if the list is null
@@ -264,8 +280,6 @@ public class ChangesetService {
                 allChangesetIDs.addAll(changesetIDs);
             }
             changesetDAO.deleteChangesetByPartyAndDate(fromDate,nextDate,orgId);
-//            System.out.println("API CALL IS DONE .... ");
-
             LocalDateTime start = nextDate.toLocalDateTime();
             LocalDateTime nextDay = start.plusDays(1);
             Timestamp nextDayTimestamp = Timestamp.valueOf(nextDay);
@@ -273,9 +287,6 @@ public class ChangesetService {
 
             deleteChangesetByPartyIDAndByDate(startday, nextDayTimestamp, endDate , orgId,allChangesetIDs);
         }
-
         return allChangesetIDs;
-
-
     }
 }

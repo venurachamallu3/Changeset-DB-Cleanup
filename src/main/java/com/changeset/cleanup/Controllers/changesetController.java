@@ -63,12 +63,10 @@ public class changesetController {
 
     @DeleteMapping("/cleanup/{id}")
     public ResponseEntity<Changeset> deleteChangesetByID(@PathVariable("id") Long Id){
-//        if(Id==null) throw new IDNotFoundException("Changeset ID is Missing in the URL, please provide the Changeset ID ");
         logger.info("Calling the Service to delete the changeset Data  with ID is "+Id);
         return new ResponseEntity<>(changesetService.deleteChangesetByID(Id), HttpStatus.OK);
-//        logger.info("CHANGESET DATA DELETED SUCCESSFULLY with ID is {}",Id);
-//        return "DELETED SUCCESSFULLY.......";
     }
+
 
     @DeleteMapping("/cleanup/date/from/{from}/to/{to}")
     public ResponseEntity <List<Long>>

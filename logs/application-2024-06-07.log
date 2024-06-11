@@ -1,0 +1,393 @@
+2024-06-07 11:06:11 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 14192 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 11:06:11 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 11:06:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 11:06:13 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 2 JPA repository interfaces.
+2024-06-07 11:06:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 11:06:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 11:06:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 11:06:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 11:06:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 11:06:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@38588dea
+2024-06-07 11:06:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 11:06:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 11:06:23 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 11:06:23 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 11:06:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 11:06:24 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 14.665 seconds (process running for 36.452)
+2024-06-07 11:06:37 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 11:06:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 11:06:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-06-07 11:06:44 [http-nio-8080-exec-3] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 18566729112
+2024-06-07 11:06:44 [http-nio-8080-exec-3] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 18566729112
+2024-06-07 11:06:45 [http-nio-8080-exec-3] ERROR c.c.c.C.changesetController - DATA IS NOT FOUND WITH THE ID  18566729112
+2024-06-07 11:06:59 [http-nio-8080-exec-4] INFO  c.c.c.C.changesetController - fetching the changeset data for the ID 18566729
+2024-06-07 11:06:59 [http-nio-8080-exec-4] INFO  c.c.cleanup.Service.ChangesetService - Getting the data from the DB for the ID 18566729
+2024-06-07 11:07:00 [http-nio-8080-exec-4] INFO  c.c.cleanup.Service.ChangesetService - Got the Changeset Data with Id is 18566729Changeset(id=18566729, org_id=11001664, changeset_type=NEW_MARC_RECORD, changeset_recorded_time=2024-04-16 08:14:19.577985, changeset_source=License Listener Service)
+2024-06-07 11:07:32 [http-nio-8080-exec-5] INFO  c.c.c.C.changesetController - Changeset Clean up data from 2022-03-10 00:00:00.0 to2022-03-11 06:00:00.0 
+2024-06-07 11:07:32 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetsDayByDay to get the changeset Data from 2022-03-10 00:00:00.0 to 2022-03-11 06:00:00.0
+2024-06-07 11:07:32 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO with the from date is 2022-03-10 00:00:00.0 to 2022-03-11 00:00:00.0 
+2024-06-07 11:07:37 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-03-10 00:00:00.0 to 2022-03-11 00:00:00.0 is 38
+2024-06-07 11:07:37 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Calling the last api call from 2022-03-11 00:00:00.0 to 2022-03-11 06:00:00.0 
+2024-06-07 11:07:38 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-03-11 00:00:00.0 to 2022-03-11 06:00:00.0 is 0
+2024-06-07 11:07:38 [http-nio-8080-exec-5] INFO  c.c.cleanup.Service.ChangesetService - Got all the changeset Data from 2022-03-11 00:00:00.0 to 2022-03-11 06:00:00.0  is [3270345, 3270348, 3270352, 3270140, 3270143, 3270151, 3270161, 3270167, 3270171, 3270178, 3270182, 3270186, 3270189, 3270195, 3270200, 3270202, 3270228, 3270232, 3270234, 3270240, 3270245, 3270246, 3270248, 3270250, 3270254, 3270259, 3270287, 3270291, 3270298, 3270302, 3270313, 3270314, 3270315, 3270324, 3270327, 3270328, 3270340, 3270344]
+2024-06-07 11:11:40 [http-nio-8080-exec-8] INFO  c.c.c.C.changesetController - Changeset Data for party id 4560728 from 2022-03-10 00:00:00.0 to 2022-03-11 06:00:00.0  
+2024-06-07 11:11:40 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Calling the method getChangesetDataAPIDateParty to get the Changest Data for Party ID 4560728 from 2022-03-10 00:00:00.0 to 2022-03-11 06:00:00.0 
+2024-06-07 11:11:40 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - calling tha DAO with the from  2022-03-10 00:00:00.0 to 2022-03-11 00:00:00.0 with party ID 4560728
+2024-06-07 11:11:41 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data from 2022-03-10 00:00:00.0 to 2022-03-11 06:00:00.0 is 3 
+2024-06-07 11:11:41 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Total Changeset Data for Party 4560728 from 2022-03-11 00:00:00.0 to 2022-03-11 06:00:00.0 count  is 3 
+2024-06-07 11:11:41 [http-nio-8080-exec-8] INFO  c.c.cleanup.Service.ChangesetService - Data is [3270232, 3270314, 3270327]
+2024-06-07 11:12:24 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'orgId' for method parameter type Long is present but converted to null]
+2024-06-07 11:13:31 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 3270345
+2024-06-07 11:13:32 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - DELTED SUCCESSFULLY...
+2024-06-07 11:14:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 11:14:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 11:14:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 11:14:51 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 6516 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 11:14:51 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 11:14:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 11:14:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2024-06-07 11:14:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 11:14:57 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 11:14:57 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 11:14:57 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 11:14:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 11:15:00 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79627d27
+2024-06-07 11:15:00 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 11:15:00 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 11:15:02 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 11:15:02 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 11:15:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 11:15:04 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 14.065 seconds (process running for 18.696)
+2024-06-07 11:15:09 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 11:15:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 11:15:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 11:15:09 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Calling the Service to delete the changeset Data  with ID is 3270140
+2024-06-07 11:15:10 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - DELETED SUCCESSFULLY...Changeset(id=3270140, org_id=2248143, changeset_type=NEW_LICENSE, changeset_recorded_time=2022-03-10 08:10:23.343696, changeset_source=License Listener Service) 
+2024-06-07 12:11:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 12:11:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 12:11:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 12:11:24 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 12864 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 12:11:24 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 12:11:25 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 12:11:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 2 JPA repository interfaces.
+2024-06-07 12:11:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 12:11:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 12:11:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 12:11:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 12:11:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 12:11:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29f3c438
+2024-06-07 12:11:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 12:11:32 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 12:11:35 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 12:11:36 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 12:11:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 12:11:38 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 15.264 seconds (process running for 19.592)
+2024-06-07 12:11:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 12:11:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 12:11:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 12:11:48 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Deleting the changeset Data from 2023-03-12 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 12:12:10 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate 
+2024-06-07 12:12:19 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: Expecting a SELECT query : `delete  from Changeset c where  c.changeset_recorded_time > :fromDate and c.changeset_recorded_time < :nextDate `] with root cause
+org.hibernate.query.IllegalSelectQueryException: Expecting a SELECT Query [org.hibernate.query.sqm.tree.select.SqmSelectStatement], but found org.hibernate.query.sqm.tree.delete.SqmDeleteStatement [delete  from Changeset c where  c.changeset_recorded_time > :fromDate and c.changeset_recorded_time < :nextDate ]
+	at org.hibernate.query.sqm.internal.SqmUtil.verifyIsSelectStatement(SqmUtil.java:98)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.verifySelect(QuerySqmImpl.java:489)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:498)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:129)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy116.deleteChangesetDataWithDate(Unknown Source)
+	at com.changeset.cleanup.Service.ChangesetService.deleteChangesetDataWithDate(ChangesetService.java:207)
+	at com.changeset.cleanup.Service.ChangesetService.deleteChangesetByDate(ChangesetService.java:195)
+	at com.changeset.cleanup.Controllers.changesetController.deleteChangesetByDate(changesetController.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-07 13:54:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 13:54:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 13:54:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 13:54:33 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 8868 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 13:54:33 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 13:54:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 13:54:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
+2024-06-07 13:54:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 13:54:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 13:54:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 13:54:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 13:54:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 13:54:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c046c92
+2024-06-07 13:54:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 13:54:41 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 13:54:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 13:54:45 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 13:54:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 13:54:47 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 15.161 seconds (process running for 18.966)
+2024-06-07 13:56:37 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 13:56:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 13:56:37 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 13:56:37 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Deleting the changeset Data from 2022-04-11 00:00:00.0 to 2022-04-13 00:00:00.0 
+2024-06-07 13:56:37 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate 
+2024-06-07 13:56:39 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-04-11 00:00:00.0 to 2022-04-12 00:00:00.0 is 47
+2024-06-07 13:57:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s195ms843µs400ns).
+2024-06-07 13:57:05 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - data is from 2022-04-11 00:00:00.0 to 2022-04-12 00:00:00.0  is Optional[[Changeset(id=3543953, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:25:58.41282, changeset_source=License Listener Service), Changeset(id=3543954, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:25:59.036915, changeset_source=License Listener Service), Changeset(id=3543965, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:05.544419, changeset_source=License Listener Service), Changeset(id=3543976, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:12.175276, changeset_source=License Listener Service), Changeset(id=3543984, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:16.605966, changeset_source=License Listener Service), Changeset(id=3543988, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:18.870384, changeset_source=License Listener Service), Changeset(id=3543997, org_id=110847, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:23.868497, changeset_source=License Listener Service), Changeset(id=3543998, org_id=4560728, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:24.427904, changeset_source=License Listener Service), Changeset(id=3544001, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:26.259658, changeset_source=License Listener Service), Changeset(id=3544006, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:29.364595, changeset_source=License Listener Service), Changeset(id=3544014, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:34.132106, changeset_source=License Listener Service), Changeset(id=3544021, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:38.272095, changeset_source=License Listener Service), Changeset(id=3544024, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:39.982732, changeset_source=License Listener Service), Changeset(id=3544029, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:42.795559, changeset_source=License Listener Service), Changeset(id=3544040, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:49.429514, changeset_source=License Listener Service), Changeset(id=3544043, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:51.071256, changeset_source=License Listener Service), Changeset(id=3544046, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:52.773378, changeset_source=License Listener Service), Changeset(id=3544048, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:53.913318, changeset_source=License Listener Service), Changeset(id=3544050, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:26:55.017133, changeset_source=License Listener Service), Changeset(id=3544066, org_id=4560728, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:27:04.312163, changeset_source=License Listener Service), Changeset(id=3544074, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:27:09.044104, changeset_source=License Listener Service), Changeset(id=3544077, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:27:10.825929, changeset_source=License Listener Service), Changeset(id=3544079, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 10:27:12.008981, changeset_source=License Listener Service), Changeset(id=3544085, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:16.945317, changeset_source=License Listener Service), Changeset(id=3544087, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:18.573522, changeset_source=License Listener Service), Changeset(id=3544092, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:22.116859, changeset_source=License Listener Service), Changeset(id=3544099, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:26.191645, changeset_source=License Listener Service), Changeset(id=3544115, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:34.998252, changeset_source=License Listener Service), Changeset(id=3544125, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:40.227812, changeset_source=License Listener Service), Changeset(id=3544129, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:42.451579, changeset_source=License Listener Service), Changeset(id=3544131, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:43.513897, changeset_source=License Listener Service), Changeset(id=3544135, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:45.601973, changeset_source=License Listener Service), Changeset(id=3544138, org_id=4560728, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:47.383642, changeset_source=License Listener Service), Changeset(id=3544141, org_id=110847, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:49.354475, changeset_source=License Listener Service), Changeset(id=3544142, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:49.939934, changeset_source=License Listener Service), Changeset(id=3544151, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:55.168597, changeset_source=License Listener Service), Changeset(id=3544153, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:56.337023, changeset_source=License Listener Service), Changeset(id=3544155, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:26:57.391427, changeset_source=License Listener Service), Changeset(id=3544162, org_id=3207054, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:01.398027, changeset_source=License Listener Service), Changeset(id=3544175, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:09.792103, changeset_source=License Listener Service), Changeset(id=3544188, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:17.01457, changeset_source=License Listener Service), Changeset(id=3544198, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:23.086049, changeset_source=License Listener Service), Changeset(id=3544200, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:24.331645, changeset_source=License Listener Service), Changeset(id=3544202, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:25.43033, changeset_source=License Listener Service), Changeset(id=3544206, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:27.681907, changeset_source=License Listener Service), Changeset(id=3544210, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:30.020356, changeset_source=License Listener Service), Changeset(id=3544214, org_id=4560728, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-11 11:27:32.297704, changeset_source=License Listener Service)]] 
+2024-06-07 13:57:05 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO to Delete with the from date is " + fromDate + " nextdate is " + nextDate 
+2024-06-07 13:57:05 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-04-12 00:00:00.0 to 2022-04-13 00:00:00.0 is 24
+2024-06-07 13:57:12 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - data is from 2022-04-12 00:00:00.0 to 2022-04-13 00:00:00.0  is Optional[[Changeset(id=3544229, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:20.904272, changeset_source=License Listener Service), Changeset(id=3544261, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:40.888963, changeset_source=License Listener Service), Changeset(id=3544262, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:41.493458, changeset_source=License Listener Service), Changeset(id=3544264, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:42.789387, changeset_source=License Listener Service), Changeset(id=3544270, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:46.262171, changeset_source=License Listener Service), Changeset(id=3544279, org_id=4560728, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:51.608857, changeset_source=License Listener Service), Changeset(id=3544298, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:02.781379, changeset_source=License Listener Service), Changeset(id=3544299, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:03.389247, changeset_source=License Listener Service), Changeset(id=3544307, org_id=110847, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:08.220473, changeset_source=License Listener Service), Changeset(id=3544310, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:09.983845, changeset_source=License Listener Service), Changeset(id=3544314, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:12.337434, changeset_source=License Listener Service), Changeset(id=3544319, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:15.233937, changeset_source=License Listener Service), Changeset(id=3544321, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:16.393399, changeset_source=License Listener Service), Changeset(id=3544323, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:17.660788, changeset_source=License Listener Service), Changeset(id=3544325, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:18.757696, changeset_source=License Listener Service), Changeset(id=3544339, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:27.41047, changeset_source=License Listener Service), Changeset(id=3544343, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:29.822197, changeset_source=License Listener Service), Changeset(id=3544346, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:31.678677, changeset_source=License Listener Service), Changeset(id=3544348, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:32.839429, changeset_source=License Listener Service), Changeset(id=3544350, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:33:34.153377, changeset_source=License Listener Service), Changeset(id=3544234, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:24.261936, changeset_source=License Listener Service), Changeset(id=3544242, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:29.137919, changeset_source=License Listener Service), Changeset(id=3544252, org_id=102462, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:35.346028, changeset_source=License Listener Service), Changeset(id=3544260, org_id=2248143, changeset_type=NEW_ENTITLEMENTS, changeset_recorded_time=2022-04-12 08:32:40.214762, changeset_source=License Listener Service)]] 
+2024-06-07 13:57:12 [http-nio-8080-exec-2] INFO  c.c.cleanup.Service.ChangesetService - Successfully Deleted the Changeset Data from 2022-04-11 00:00:00.0 to 2022-04-13 00:00:00.0  , Changeset IDS : [3543953, 3543954, 3543965, 3543976, 3543984, 3543988, 3543997, 3543998, 3544001, 3544006, 3544014, 3544021, 3544024, 3544029, 3544040, 3544043, 3544046, 3544048, 3544050, 3544066, 3544074, 3544077, 3544079, 3544085, 3544087, 3544092, 3544099, 3544115, 3544125, 3544129, 3544131, 3544135, 3544138, 3544141, 3544142, 3544151, 3544153, 3544155, 3544162, 3544175, 3544188, 3544198, 3544200, 3544202, 3544206, 3544210, 3544214, 3544229, 3544261, 3544262, 3544264, 3544270, 3544279, 3544298, 3544299, 3544307, 3544310, 3544314, 3544319, 3544321, 3544323, 3544325, 3544339, 3544343, 3544346, 3544348, 3544350, 3544234, 3544242, 3544252, 3544260] 
+2024-06-07 15:18:03 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 15:18:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 15:18:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 15:18:14 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 9244 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 15:18:14 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 15:18:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 15:18:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 2 JPA repository interfaces.
+2024-06-07 15:18:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 15:18:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 15:18:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 15:18:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 15:18:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 15:18:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@528c8c1
+2024-06-07 15:18:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 15:18:24 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 15:18:26 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 15:18:28 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 15:18:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 15:18:31 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 17.527 seconds (process running for 19.236)
+2024-06-07 15:19:52 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 15:19:52 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 15:19:52 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 15:19:52 [http-nio-8080-exec-1] INFO  c.c.c.C.changesetController - Deleting the Changeset Data for Party ID 4560728 from 2022-05-19 00:00:00.0 to 2022-05-28 00:00:00.0
+2024-06-07 15:20:29 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the Method deleteChangesetByPartyIDAndByDate , to delete the Changeset Data for Party ID 4560728 from 2022-05-19 00:00:00.0 to 
+2024-06-07 15:20:29 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s394ms967µs800ns).
+2024-06-07 15:20:36 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-19 00:00:00.0 to 2022-05-20 00:00:00.0 
+2024-06-07 15:20:36 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-19 00:00:00.0 to 2022-05-20 00:00:00.0 is 2
+2024-06-07 15:20:37 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-20 00:00:00.0 to 2022-05-21 00:00:00.0 
+2024-06-07 15:20:37 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-20 00:00:00.0 to 2022-05-21 00:00:00.0 is 3
+2024-06-07 15:20:38 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-21 00:00:00.0 to 2022-05-22 00:00:00.0 
+2024-06-07 15:20:38 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-21 00:00:00.0 to 2022-05-22 00:00:00.0 is 0
+2024-06-07 15:20:38 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-22 00:00:00.0 to 2022-05-23 00:00:00.0 
+2024-06-07 15:20:38 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-22 00:00:00.0 to 2022-05-23 00:00:00.0 is 0
+2024-06-07 15:20:39 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-23 00:00:00.0 to 2022-05-24 00:00:00.0 
+2024-06-07 15:20:39 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-23 00:00:00.0 to 2022-05-24 00:00:00.0 is 0
+2024-06-07 15:20:40 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-24 00:00:00.0 to 2022-05-25 00:00:00.0 
+2024-06-07 15:20:40 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-24 00:00:00.0 to 2022-05-25 00:00:00.0 is 0
+2024-06-07 15:20:40 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-25 00:00:00.0 to 2022-05-26 00:00:00.0 
+2024-06-07 15:20:41 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-25 00:00:00.0 to 2022-05-26 00:00:00.0 is 0
+2024-06-07 15:20:41 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-26 00:00:00.0 to 2022-05-27 00:00:00.0 
+2024-06-07 15:20:42 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-26 00:00:00.0 to 2022-05-27 00:00:00.0 is 0
+2024-06-07 15:20:42 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Calling the DAO for party ID 4560728 from 2022-05-27 00:00:00.0 to 2022-05-28 00:00:00.0 
+2024-06-07 15:20:43 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Changeset Data count  from 2022-05-27 00:00:00.0 to 2022-05-28 00:00:00.0 is 2
+2024-06-07 15:20:43 [http-nio-8080-exec-1] INFO  c.c.cleanup.Service.ChangesetService - Successfully Deleted  the changeset Data for  the party ID 4560728 from 2022-05-19T00:00 to 2022-05-28 00:00:00.0 , changeset IDS : [3561125, 3561148, 3561166, 3561185, 3561214, 3561591, 3561615]
+2024-06-07 15:22:28 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m59s626ms540µs900ns).
+2024-06-07 18:20:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 18:20:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 18:20:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 18:20:27 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 10048 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 18:20:27 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 18:20:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 18:20:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2024-06-07 18:20:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 18:20:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 18:20:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 18:20:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 18:20:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 18:20:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@613f7eb7
+2024-06-07 18:20:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 18:20:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 18:20:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 18:20:39 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 18:20:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 18:20:41 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 14.597 seconds (process running for 18.485)
+2024-06-07 18:25:29 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 18:25:29 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 18:25:29 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 18:25:29 [http-nio-8080-exec-1] INFO  c.c.c.Controllers.DeltaController - Deleting the Delta Data with the Changeset ID as 1
+2024-06-07 18:25:30 [http-nio-8080-exec-1] ERROR c.c.c.C.changesetController - Changeset ID is not found in the Changeset DB with ID 1
+2024-06-07 18:33:12 [http-nio-8080-exec-5] INFO  c.c.c.Controllers.DeltaController - Delete the Delta Data from 2023-03-12 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 18:33:12 [http-nio-8080-exec-5] INFO  c.c.c.C.changesetController - calling the method deleteDayToDay from 2023-03-12 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 18:33:12 [http-nio-8080-exec-5] INFO  c.c.c.C.changesetController - calling tha DAO to Delete with the from 2023-03-12 00:00:00.0 to 2023-03-13 00:00:00.0 
+2024-06-07 18:33:31 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: Expecting a SELECT query : `delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) `] with root cause
+org.hibernate.query.IllegalSelectQueryException: Expecting a SELECT Query [org.hibernate.query.sqm.tree.select.SqmSelectStatement], but found org.hibernate.query.sqm.tree.delete.SqmDeleteStatement [delete  from Delta d where d.changeset_id in  (SELECT c.id FROM Changeset c WHERE c.changeset_recorded_time > :from and c.changeset_recorded_time < :to) ]
+	at org.hibernate.query.sqm.internal.SqmUtil.verifyIsSelectStatement(SqmUtil.java:98)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.verifySelect(QuerySqmImpl.java:489)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:498)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:427)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:129)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy118.deleteByDeltaByDate(Unknown Source)
+	at com.changeset.cleanup.Service.DeltaService.deleteDayToDay(DeltaService.java:137)
+	at com.changeset.cleanup.Service.DeltaService.deleteDayByDayData(DeltaService.java:119)
+	at com.changeset.cleanup.Controllers.DeltaController.deleteDataDayByDay(DeltaController.java:82)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-06-07 18:42:56 [SpringApplicationShutdownHook] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-07 18:42:56 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 18:42:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 18:42:56 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-07 18:45:01 [main] INFO  c.c.cleanup.CleanupApplication - Starting CleanupApplication using Java 17.0.4.1 with PID 14128 (C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup\target\classes started by VenuGopalReR in C:\Users\VenuGopalReR\OneDrive - Informa plc\Desktop\ChangesetCleanup)
+2024-06-07 18:45:01 [main] INFO  c.c.cleanup.CleanupApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-07 18:45:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 18:45:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
+2024-06-07 18:45:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-07 18:45:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 18:45:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-07 18:45:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 18:45:06 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 18:45:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a8f6e6
+2024-06-07 18:45:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 18:45:09 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 18:45:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 18:45:11 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 18:45:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-07 18:45:13 [main] INFO  c.c.cleanup.CleanupApplication - Started CleanupApplication in 12.401 seconds (process running for 24.869)
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  c.c.c.Controllers.DeltaController - Delete the Delta Data from 2023-03-12 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - calling the method deleteDayToDay from 2023-03-12 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 18:45:47 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - calling tha DAO to Delete with the from 2023-03-12 00:00:00.0 to 2023-03-13 00:00:00.0 
+2024-06-07 18:45:50 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - API CALL IS DONE and deleted the data.... 
+2024-06-07 18:45:50 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Deleted the data from the Delta from 2023-03-12 00:00:00.0 to 2023-03-13 00:00:00.0 count is 0 and data is []
+2024-06-07 18:45:50 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - calling tha DAO to Delete with the from 2023-03-13 00:00:00.0 to 2023-03-14 00:00:00.0 
+2024-06-07 18:45:53 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - API CALL IS DONE and deleted the data.... 
+2024-06-07 18:45:53 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Deleted the data from the Delta from 2023-03-13 00:00:00.0 to 2023-03-14 00:00:00.0 count is 0 and data is []
+2024-06-07 18:45:53 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - calling tha DAO to Delete with the from 2023-03-14 00:00:00.0 to 2023-03-15 00:00:00.0 
+2024-06-07 18:45:57 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - API CALL IS DONE and deleted the data.... 
+2024-06-07 18:45:57 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Deleted the data from the Delta from 2023-03-14 00:00:00.0 to 2023-03-15 00:00:00.0 count is 0 and data is []
+2024-06-07 18:45:57 [http-nio-8080-exec-2] INFO  c.c.c.C.changesetController - Total deleted data is from 2023-03-15 00:00:00.0 to 2023-03-15 00:00:00.0  is 
